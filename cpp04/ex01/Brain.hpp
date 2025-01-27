@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/30 14:10:48 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/01 08:33:58 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
+# include <iostream>
+# include <string>
 
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
-
-	return (0);
-}
+class   Brain {
+    private :
+        std::string brain[100];
+    
+    public :
+        Brain();
+        Brain(const Brain &other);
+        Brain &operator=(const Brain &other);
+        ~Brain();
+};
+#endif

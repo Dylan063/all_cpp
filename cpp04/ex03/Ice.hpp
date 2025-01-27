@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/10/03 09:42:25 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/04 10:47:48 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef ICE_HPP
+#define ICE_HPP
 
+#include "AMateria.hpp"
 
-int	main(void)
+class Ice : public AMateria
 {
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+public:
+    Ice();
+    Ice(const Ice &other);
+    Ice &operator=(const Ice &other);
+    virtual ~Ice();
+    virtual AMateria *clone() const;
+    virtual void use(ICharacter &target);
+};
 
-	return (0);
-}
+#endif

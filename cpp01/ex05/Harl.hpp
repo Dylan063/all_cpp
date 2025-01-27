@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/16 16:15:24 by dravaono          #+#    #+#             */
+/*   Updated: 2024/09/16 16:45:00 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef HARL_HPP
+# define HARL_HPP
 
+#include "iostream"
+#include "string"
 
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+class   Harl{
+    private :
+    void debug();
+    void info();
+    void warning();
+    void error();
 
-	return (0);
-}
+    public :
+    Harl();
+    ~Harl();
+    void complain(std::string level);
+};
+int getlevel(std::string level);
+
+#endif

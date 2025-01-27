@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/26 10:14:09 by dravaono          #+#    #+#             */
+/*   Updated: 2024/09/26 12:52:15 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef WrongCat_HPP
+# define WrongCat_HPP
+
+#include <iostream>
+#include <string>
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal{
+    protected :
+    std::string type;
+
+    public : 
+    WrongCat();
+    ~WrongCat();
+    WrongCat &operator=(const WrongCat &other);
+    WrongCat(const WrongCat &chat);
+    void    makeSound() const;
+};
 
 
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
-
-	return (0);
-}
+#endif

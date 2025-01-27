@@ -5,20 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/12/24 14:13:21 by dravaono          #+#    #+#             */
+/*   Updated: 2025/01/02 14:03:24 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#include "PmergeMe.hpp"
 
+int main(int argc, char **argv) {
+    try {
+        if (argc < 2) {
+            std::cerr << "Error: No input provided." << std::endl;
+            return 1;
+        }
+        PmergeMe pmerge;
+        pmerge.parseInput(argc, argv);
+        pmerge.sortAndMeasure();
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
 
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
-
-	return (0);
+    return 0;
 }

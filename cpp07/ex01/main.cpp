@@ -5,20 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/11/22 14:21:53 by dravaono          #+#    #+#             */
+/*   Updated: 2024/11/22 15:23:39 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#include "iter.hpp"
 
-
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
-
-	return (0);
+int main() {
+    int array[] = {1, 2, 3, 4, 5};
+    iter(array, 5, otherFunct);
+    return 0;
 }

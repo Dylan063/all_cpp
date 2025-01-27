@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/10/10 18:19:25 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/19 17:43:30 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
+#include "AForm.hpp"
 
-int	main(void)
+class shrubbery : public AForm
 {
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+public:
+    virtual void execute(const Bureaucrat &executor) const;
+    shrubbery();
+    shrubbery(const shrubbery &other);
+    shrubbery &operator=(const shrubbery &other);
+    ~shrubbery();
 
-	return (0);
-}
+private:
+     std::string _cible;
+};
+
+#endif

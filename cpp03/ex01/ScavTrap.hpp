@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/23 12:55:31 by dravaono          #+#    #+#             */
+/*   Updated: 2024/09/24 16:04:12 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+#include "ClapTrap.hpp"
 
+class   ScavTrap : public ClapTrap{    
+    public :
+    ScavTrap(const std::string &name);
+    ScavTrap &operator=(const ScavTrap &other);
+    ScavTrap(const ScavTrap &other);
+    ~ScavTrap();
+    void guardGate();
+    void attackscav(const std::string &target);
+};
 
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
-
-	return (0);
-}
+#endif

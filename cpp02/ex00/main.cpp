@@ -5,20 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/16 17:43:37 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/11 16:53:07 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#include "Fixed.hpp"
+#include <iostream>
 
-
-int	main(void)
+int main(void)
 {
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
+    c = b;
 
-	return (0);
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+
+    return 0;
 }

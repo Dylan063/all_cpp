@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/10/10 18:21:20 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/22 14:53:07 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
+#include "AForm.hpp"
 
-int	main(void)
+class robot : public AForm
 {
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+public:
+    virtual void execute(const Bureaucrat &executor) const;
+    robot();
+    robot(const robot &other);
+    robot &operator=(const robot &other);
+    ~robot();
 
-	return (0);
-}
+private:
+     std::string _cible;
+};
+
+#endif

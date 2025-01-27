@@ -5,20 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/25 17:45:59 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/02 09:56:19 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-
-int	main(void)
+int main()
 {
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
-
-	return (0);
+	AAnimal *Animaltab[10];
+	
+	for(int i = 0; i < 10; i++){
+		if (i < 10/2)
+			Animaltab[i] = new Dog;
+		else
+			Animaltab[i] = new Cat;
+	}
+	for (int i = 0; i < 10; i++){
+		delete Animaltab[i];
+	}
+	return 0;
 }

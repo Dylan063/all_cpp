@@ -5,20 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/20 18:09:20 by dravaono          #+#    #+#             */
+/*   Updated: 2025/01/16 14:09:38 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#include "ClapTrap.hpp"
 
-
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
-
-	return (0);
+int main() { 
+    ClapTrap clap("Dylan");
+    clap.attack("David");
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.beRepaired(1);
+    clap.takeDamage(20);
+    clap.takeDamage(20);
 }

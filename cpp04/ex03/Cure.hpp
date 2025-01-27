@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/10/03 09:42:18 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/04 10:47:26 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef CURE_HPP
+#define CURE_HPP
 
+#include "AMateria.hpp"
 
-int	main(void)
+class Cure : public AMateria
 {
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+public:
+    Cure();
+    Cure(const Cure &other);
+    Cure &operator=(const Cure &other);
+    virtual ~Cure();
+    virtual AMateria *clone() const;
+    virtual void use(ICharacter &target);
+};
 
-	return (0);
-}
+#endif

@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whathever.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/11/22 11:35:46 by dravaono          #+#    #+#             */
+/*   Updated: 2024/11/22 12:01:46 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef WHATHEVER_HPP
+#define WHATHEVER_HPP
 
-
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
-
-	return (0);
+template <typename T>
+void swap(T &a, T &b){
+    T temp = a;
+    a = b;
+    b = temp;
 }
+template <typename T>
+T min(const T &a,const T &b){
+    if (a < b)
+        return a;
+    else
+        return b;
+}
+template <typename T>
+T max(const T &a,const T &b){
+    if (a > b)
+        return a;
+    else 
+        return b;
+}
+
+#endif

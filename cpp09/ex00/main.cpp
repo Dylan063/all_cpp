@@ -5,20 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/12/12 13:27:20 by dravaono          #+#    #+#             */
+/*   Updated: 2024/12/19 19:07:54 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#include "BitcoinExchange.hpp"
 
-
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
-
-	return (0);
+int main(int ac, char **av){
+    if (ac == 2){
+        try{
+            bitcoinExchange test(av[1]);
+            test.fileToMap("data.csv");
+            test.parsingFile();
+            test.checkInputFile(av[1]);
+        }
+        catch(std::exception &e){
+            std::cerr << "Error: " << e.what() << std::endl;
+        }
+    }
+    return 0;
 }

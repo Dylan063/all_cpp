@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/12 16:29:07 by dravaono          #+#    #+#              #
-#    Updated: 2024/09/16 17:40:44 by dravaono         ###   ########.fr        #
+#    Created: 2024/10/01 11:57:14 by dravaono          #+#    #+#              #
+#    Updated: 2024/10/04 10:33:16 by dravaono         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=  Harl
+NAME	=  Materia
 
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -29,7 +29,7 @@ all: $(NAME)
 
 $(NAME): 
 	@printf "$(CURSIVE)$(GRAY) 	- Compiling $(NAME)... $(RESET)\n"
-	@ $(CC) $(FLAGS) main.cpp Harl.cpp -o $(NAME)
+	@ $(CC) $(FLAGS) main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp -o $(NAME)
 	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
 
 clean:

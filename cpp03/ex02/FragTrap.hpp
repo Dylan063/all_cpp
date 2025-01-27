@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/25 15:40:12 by dravaono          #+#    #+#             */
+/*   Updated: 2024/09/26 10:19:12 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
+#include "ScavTrap.hpp"
 
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+class   FragTrap : public ClapTrap{    
+    public :
+    FragTrap(const std::string &name);
+    FragTrap &operator=(const FragTrap &other);
+    FragTrap(const FragTrap &other);
+    ~FragTrap();
+    void highFivesGuys();
+    void attackfrag(const std::string &target);
+};
 
-	return (0);
-}
+#endif

@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/10/01 12:04:24 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/04 10:48:22 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
+#include <string>
 
-int	main(void)
+class AMateria;
+
+class ICharacter
 {
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+public:
+    virtual ~ICharacter() {}
+    virtual std::string const &getName() const = 0;
+    virtual void equip(AMateria *m) = 0;
+    virtual void unequip(int idx) = 0;
+    virtual void use(int idx, ICharacter &target) = 0;
+};
 
-	return (0);
-}
+#endif

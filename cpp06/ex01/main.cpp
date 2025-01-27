@@ -5,20 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/11/19 09:21:41 by dravaono          #+#    #+#             */
+/*   Updated: 2024/11/25 16:13:09 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#include "Serialization.hpp"
+#include <iostream>
 
+int main(void){
+    
+    Data data = {42};
+    uintptr_t serialized = Serializer::serialize(&data);
+    Data* deserialized = Serializer::deserialize(serialized);
 
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+    if (&data == deserialized) 
+        std::cout << "Test ok" << std::endl;
+     else 
+        std::cout << "Test fail" << std::endl;
 
-	return (0);
+    return 0;
 }

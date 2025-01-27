@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/12 16:29:07 by dravaono          #+#    #+#              #
-#    Updated: 2024/09/16 17:40:44 by dravaono         ###   ########.fr        #
+#    Created: 2024/11/26 09:08:09 by dravaono          #+#    #+#              #
+#    Updated: 2025/01/03 14:04:02 by dravaono         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=  Harl
+NAME	=  RPN
 
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -29,7 +29,7 @@ all: $(NAME)
 
 $(NAME): 
 	@printf "$(CURSIVE)$(GRAY) 	- Compiling $(NAME)... $(RESET)\n"
-	@ $(CC) $(FLAGS) main.cpp Harl.cpp -o $(NAME)
+	@ $(CC) $(FLAGS) main.cpp RPN.cpp -o$(NAME)
 	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
 
 clean:

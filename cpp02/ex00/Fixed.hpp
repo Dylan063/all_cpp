@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/16 17:43:58 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/11 16:12:21 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
+#include <string>
+#include <iostream>
 
-int	main(void)
+class Fixed
 {
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
 
-	return (0);
-}
+public:
+  Fixed(void);
+  Fixed(const Fixed &copie);
+  ~Fixed(void);
+
+  Fixed &operator=(const Fixed &rhs);
+
+  int getRawBits(void) const;
+  void setRawBits(int const raw);
+
+private:
+  int _value;
+  static const int _fix = 8;
+};
+
+#endif

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/10/02 12:16:45 by dravaono          #+#    #+#             */
+/*   Updated: 2024/10/04 10:48:50 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
+#include <string>
 
-int	main(void)
+class AMateria;
+
+class IMateriaSource
 {
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+public:
+    virtual ~IMateriaSource() {}
+    virtual void learnMateria(AMateria *) = 0;
+    virtual AMateria *createMateria(std::string const &type) = 0;
+};
 
-	return (0);
-}
+#endif

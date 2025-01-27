@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/25 17:47:03 by dravaono          #+#    #+#             */
+/*   Updated: 2024/09/26 11:49:14 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#ifndef CAT_HPP
+# define CAT_HPP
 
+#include "Animal.hpp"
 
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+class Cat : public Animal{
+    public : 
+    Cat();
+    ~Cat();
+    Cat &operator=(const Cat &other);
+    Cat(const Cat &anim);
+    void    makeSound() const;
+};
 
-	return (0);
-}
+#endif

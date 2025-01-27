@@ -5,20 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravaono <dravaono@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:53:22 by dravaono          #+#    #+#             */
-/*   Updated: 2024/12/17 15:20:23 by dravaono         ###   ########.fr       */
+/*   Created: 2024/09/16 16:14:23 by dravaono          #+#    #+#             */
+/*   Updated: 2024/09/16 16:45:27 by dravaono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include <cctype>
+#include "Harl.hpp"
 
+int getlevel(std::string level){
+    std::string levelsss[4];
+    levelsss[0] = "DEBUG";
+    levelsss[1] = "INFO";
+    levelsss[2] = "WARNING";
+    levelsss[3] = "ERROR";
+    int i = 0;
+    while(levelsss[i] != level){
+        i++;
+    }
+    return (i + 1);
+}
 
-int	main(void)
-{
-	PhoneBook Phone;
-	int verif = 0;
-	Phone.run(verif);
+int main(void){
+    Harl harl;
 
-	return (0);
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
+    return (0);
 }
